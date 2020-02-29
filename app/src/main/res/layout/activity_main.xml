@@ -5,30 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".MainActivity"
     android:background="#333">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Carson's Weather App!"
-        android:layout_gravity="center"
-        android:background="#333"
-        android:textColor="#fff"
-        android:padding="10dp"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Welcome to Carson's Weather App!"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="#333"-->
+<!--        android:textColor="#fff"-->
+<!--        android:padding="10dp"-->
+<!--        />-->
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000"
-        />
+<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#000"-->
+<!--        />-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_weather"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#888"
-        />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_weather"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#888"
+            />
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:visibility="invisible"
+            android:text="@string/loading_error_message"/>
+
+        <ProgressBar
+            android:id="@+id/pb_loading_indicator"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="32dp"
+            android:visibility="invisible"/>
+    </FrameLayout>
 
 </LinearLayout>
